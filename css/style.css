@@ -1,0 +1,67 @@
+
+/* отступ внутренний для всех div-ов */
+div{
+    padding: 10px;
+}
+
+/* свойства для параграфов */
+p{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* свойства для параграфов класса code */
+p.code{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* свойства для выделения тегов и селекторов */
+.select-code {
+    color: blue;
+    font-weight: 500;
+}
+
+/* раздел статьи */
+.block-article{
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(238, 228, 213);
+    color: black;
+}
+
+/* свойства для написания кода */
+.block-code {
+    display: inline-block;
+    min-width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: green;
+    font-size: 18px;
+    font-weight: 500 ;
+}
+
+/* свойства для оформления примеров */
+.block-example{
+    min-width: 40%;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+}
+
+/* Далее идут свойства для отображения примеров урока */
+
+p.teg{
+    color: red;
+}
+
+.content{
+    color: blue;
+}
+
+#id-block{
+    color: green;
+}

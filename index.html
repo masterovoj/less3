@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Урок №3. Знакомство с CSS</title>
+</head>
+
+<body>
+
+    <!-- ? Хочу оформить урок покрасивее, без использования CSS стилей. К сожалению, придется использовать устаревшие HTML свойства таблиц -->
+
+    <!-- * Шапка страницы header -->
+    <header class="header">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- * Верхняя часть -->
+                <td width="20%" align="center" bgcolor="#052535">
+                    <!-- * Простите Евгенний за использование картинки, если нельзя, удалю -->
+                    <img width="200" src="img/like.png" alt="Картинка Евгения">
+                </td>
+                <td width="80%" bgcolor="#052535">
+                    <font size="5" color="white" face="Arial">Урок №3. Знакомство с CSS.</font>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+
+
+
+
+    <!-- * Основной контент страницы main -->
+    <main>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- Отступ слева 20% -->
+                <td width="20%" bgcolor="#052535"></td>
+
+
+                <!-- Средняя, основная часть, в которой будет размещяться весь контент -->
+                <td width="60%">
+
+                    <!-- START Подключение CSS файла к html странице -->
+                    <div class="block-article">
+
+                        <h2>Подключение CSS файла к html странице</h2>
+
+                        <p>Для подключения CSS файла к html странице необходимо в заголовке (head) прописать тег
+                            <span class="code">
+                                <code>&lt;link&gt; &lt;/link&gt;</code>
+                            </span>.
+                            Атрибут <span class="code">rel=" "</span> указывает, что мы подключаем CSS
+                            документ, атрибут <span class="code">href=" "</span> указывает путь до нашего CSS файла.
+                        </p>
+
+                        <div class="block-code">
+                            <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</code>
+                        </div>
+                    </div>
+                    <!-- END Подключение CSS файла к html странице -->
+
+                    <!-- START БЛОК ТИПЫ СЕЛЕКТОРОВ -->
+                    <div>
+                        <h2>Типы Селекторов</h2>
+
+                        <!-- START Селектор тега -->
+                        <div class="block-article">
+                            <h3>Селектор тега</h3>
+
+                            <p>При обращении к HTML странице из CSS страницы по селектору тега, свойства, присвоенные
+                                этому селектору применятся ко всем одноименным тегам, расположенным на данной странице.
+                            </p>
+
+                            <p class="select-code">Запись в CSS файле </p>
+                            <div class="block-code">
+                                <code>
+                                    div{ color: red; }
+                                </code>
+                            </div>
+
+                            <p class="select-code">Запись в HTML</p>
+                            <div class="block-code">
+                                &lt;div class=&quot;code&quot;&gt;<br>
+                                &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui,
+                                quae.&lt;/p&gt;<br>
+                                &lt;p&gt;Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные
+                                тексты.&lt;/p&gt; <br> &lt;/div&gt;
+                            </div>
+
+                            <p class="select-code">Результат</p>
+                            <div class="block-example">
+                                <div>
+                                    <p class="teg">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, quae.
+                                    </p>
+                                    <p class="teg">
+                                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Селектор тега -->
+
+
+                        <!-- START Селектор класса -->
+                        <div class="block-article">
+                            <h3>Селектор класса</h3>
+                            <p>Свойства будут применяться к конкретному классу.</p>
+                            <p class="select-code">Запись в CSS файле</p>
+                            <div class="block-code">
+                                <code>
+                                    .content{
+                                        color: blue;
+                                    }
+                                </code>
+                            </div>
+
+                            <p class="select-code">Запись в HTML</p>
+                            <div class="block-code">
+                                &lt;div class=&quot;block&quot;&gt;<br>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam modi nostrum vel cumque facere quibusdam, voluptate ab a possimus incidunt. <br>
+                                &lt;/div&gt;<br>
+                                &lt;div class=&quot;content&quot;&gt;<br> Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Рукопись эта букв, повстречался своих ему то заманивший океана подпоясал. <br>&lt;/div&gt;
+                            </div>
+                            
+                            <p class="select-code">Результат</p>
+                            <div class="block-example">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam modi nostrum vel cumque facere quibusdam, voluptate ab a possimus incidunt.</p>
+                                <p class="content">
+                                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Рукопись эта букв, повстречался своих ему то заманивший океана подпоясал.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- END Селектор класса -->
+
+
+                        <!-- START Селектор Идентификатора -->
+                        <div class="block-article">
+                            <h3>Селектор идентификатора</h3>
+                            <p>Свойства применятся только элементу с указанным идентификатором.</p>
+                            <p class="select-code">Запись в CSS</p>
+                            <div class="block-code">
+                                <code>
+                                    #id-block{ color: green; }
+                                </code>
+                            </div>
+                            <p class="select-code">Запись в HTML</p>
+                            <div class="block-code">
+                                &lt;div id=&quot;id-block&quot; class=&quot;block&quot;&gt;<br>
+                                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus deleniti, itaque maxime tempore quaerat placeat ut aliquid consequatur in harum.&lt;/p&gt; <br>&lt;/div&gt; <br>&lt;div class=&quot;block&quot;&gt; <br>&lt;p&gt;Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Страна свой эта что ее по всей, пустился вершину раз власти.&lt;/p&gt; <br> &lt;/div&gt;
+                            </div>
+                            <p class="select-code">Результат</p>
+                            <div class="block-example">
+                                <p id="id-block" class="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus deleniti, itaque maxime tempore quaerat placeat ut aliquid consequatur in harum.</p>
+                                <p class="block">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Страна свой эта что ее по всей, пустился вершину раз власти.</p>
+                            </div>
+                        </div>
+                        <!-- END Селектор Идентификатора -->
+
+                    </div>
+                    <!-- END БЛОК ТИПЫ СЕЛЕКТОРОВ -->
+
+
+                </td>
+
+
+
+
+                <!-- * Отступ справа 20% -->
+                <td width="20%" bgcolor="#052535"></td>
+            </tr>
+        </table>
+    </main>
+
+
+
+
+
+    <!-- * Подвал страницы footer -->
+    <footer>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- * нижняя часть -->
+                <td bgcolor="#052535">
+                    <font color="gray">
+                        <h6>Исполнитель ДЗ: Сычев Дмитрий</h6>
+                        <h6>mail: verstakmaster@mail.ru</h6>
+                    </font>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>
